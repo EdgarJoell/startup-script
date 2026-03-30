@@ -22,6 +22,14 @@ else
     echo "Node already installed, skipping,"
 fi
 
+echo "\nStep 3: Installing Ruby via Homebrew..." 
+
+if ! brew list | grep ruby &>/dev/null; then
+    echo "Installing the Ruby programming language via Homebrew..."
+else
+    echo "Ruby already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
