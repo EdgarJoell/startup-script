@@ -1,6 +1,6 @@
-echo "Beginning Process of setting up machine for development..."
+echo "Beginning Process of setting up Mac machine for development...\n"
 
-echo "Installing Homebrew to Mac machine..." 
+echo "\nStep 1: Installing Homebrew to machine...\n" 
 
 if ! command -v brew &>/dev/null; then
     echo "Installing Homebrew..."
@@ -14,9 +14,17 @@ if [[ "$(uname -m)" == "arm64" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo "Finalizing Script..."
+echo "\nStep 2: Installing Node.JS via Homebrew..." 
 
-# Add some clean up right here
+if ! brew list | grep node &>/dev/null; then
+    echo "Installing the latest LTS from Node.JS via Homebrew..."
+else
+    echo "Node already installed, skipping,"
+fi
 
-echo "Completed. Happy Coding!"
+# echo "Finalizing Script..."
+
+# # Add some clean up right here
+
+# echo "Completed. Happy Coding!"
 
