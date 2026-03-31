@@ -79,6 +79,15 @@ else
    echo "mongosh already installed, skipping,"
 fi
 
+echo "\nStep 8: Installing Node Version Manager (NVM)..." 
+
+if ! brew list | grep nvm &>/dev/null; then
+   echo "Installing the nvm developer tool..."
+   brew install nvm
+else
+   echo "nvm already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
