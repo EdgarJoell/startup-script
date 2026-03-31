@@ -50,6 +50,15 @@ else
    echo "Python already installed, skipping,"
 fi
 
+echo "\nStep 6: Installing OpenJDK via Homebrew..." 
+
+if ! brew list | grep openjdk &>/dev/null; then
+   echo "Installing the OpenJDK programming language via Homebrew..."
+   brew install openjdk
+else
+   echo "OpenJDK already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
