@@ -14,7 +14,7 @@ if [[ "$(uname -m)" == "arm64" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo "\nContinuing on to install software and tools...\n"
+echo "\nContinuing on to install software and tools via Homebrew...\n"
 
 echo "\nStep 2: Installing Node.JS..." 
 
