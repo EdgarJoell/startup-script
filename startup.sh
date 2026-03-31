@@ -14,55 +14,57 @@ if [[ "$(uname -m)" == "arm64" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo "\nStep 2: Installing Node.JS via Homebrew..." 
+echo "\nContinuing on to install software and tools...\n"
+
+echo "\nStep 2: Installing Node.JS..." 
 
 if ! brew list | grep node &>/dev/null; then
-   echo "Installing the latest LTS from Node.JS via Homebrew..."
+   echo "Installing the latest LTS Node.JS developer tool..."
     brew install npm
 else
    echo "Node already installed, skipping,"
 fi
 
-echo "\nStep 3: Installing Ruby via Homebrew..." 
+echo "\nStep 3: Installing Ruby..." 
 
 if ! brew list | grep ruby &>/dev/null; then
-   echo "Installing the Ruby programming language via Homebrew..."
+   echo "Installing the Ruby programming language..."
     brew install ruby
 else
    echo "Ruby already installed, skipping,"
 fi
 
-echo "\nStep 4: Installing Ruby via Homebrew..." 
+echo "\nStep 4: Installing Ruby..." 
 
 if ! brew list | grep typescript &>/dev/null; then
-   echo "Installing the TypeScript programming language via Homebrew..."
+   echo "Installing the TypeScript programming language..."
     brew install typescript
 else
    echo "TypeScript already installed, skipping,"
 fi
 
-echo "\nStep 5: Installing Python via Homebrew..." 
+echo "\nStep 5: Installing Python..." 
 
 if ! brew list | grep python &>/dev/null; then
-   echo "Installing the Python programming language via Homebrew..."
+   echo "Installing the Python programming language..."
    brew install python
 else
    echo "Python already installed, skipping,"
 fi
 
-echo "\nStep 6: Installing OpenJDK via Homebrew..." 
+echo "\nStep 6: Installing OpenJDK..." 
 
 if ! brew list | grep openjdk &>/dev/null; then
-   echo "Installing the OpenJDK programming language via Homebrew..."
+   echo "Installing the OpenJDK..."
    brew install openjdk
 else
    echo "OpenJDK already installed, skipping,"
 fi
 
-echo "\nStep 7: Installing mongodb-community via Homebrew..." 
+echo "\nStep 7: Installing mongodb-community..." 
 
 if ! brew list | grep mongodb-community &>/dev/null; then
-   echo "Installing the mongodb-community database via Homebrew..."
+   echo "Installing the mongodb-community database..."
    brew install openjdk
 else
    echo "mongodb-community already installed, skipping,"
