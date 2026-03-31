@@ -65,7 +65,7 @@ echo "\nStep 7: Installing mongodb-community..."
 
 if ! brew list | grep mongodb-community &>/dev/null; then
    echo "Installing the mongodb-community database..."
-   brew install openjdk
+   brew install mongodb-community
 else
    echo "mongodb-community already installed, skipping,"
 fi
@@ -74,7 +74,7 @@ echo "\nStep 8: Installing mongosh..."
 
 if ! brew list | grep mongosh &>/dev/null; then
    echo "Installing the mongosh developer tool..."
-   brew install openjdk
+   brew install mongosh
 else
    echo "mongosh already installed, skipping,"
 fi
