@@ -70,6 +70,15 @@ else
    echo "mongodb-community already installed, skipping,"
 fi
 
+echo "\nStep 8: Installing mongosh..." 
+
+if ! brew list | grep mongosh &>/dev/null; then
+   echo "Installing the mongosh developer tool..."
+   brew install openjdk
+else
+   echo "mongosh already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
