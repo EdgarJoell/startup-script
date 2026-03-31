@@ -59,6 +59,15 @@ else
    echo "OpenJDK already installed, skipping,"
 fi
 
+echo "\nStep 7: Installing mongodb-community via Homebrew..." 
+
+if ! brew list | grep mongodb-community &>/dev/null; then
+   echo "Installing the mongodb-community database via Homebrew..."
+   brew install openjdk
+else
+   echo "mongodb-community already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
