@@ -55,8 +55,33 @@ fi
 echo "\nStep 6: Installing OpenJDK..." 
 
 if ! brew list | grep openjdk &>/dev/null; then
-   echo "Installing the OpenJDK..."
-   brew install openjdk
+   INCORRECT_VALUE=1
+
+   while [ "$INCORRECT_VALUE" -eq 1 ]
+   do
+      read -t 10 -p "Which Java version would you like as your main version? Allowed versions: 11, 17, 21, 25 (if no version is specified, this script defaults to 21): " version
+
+      if [ "$version" = "" ]; then 
+         version=21
+      fi 
+
+      if [[ "$version" =~ ^(11|17|21|25)$ ]]; then
+         INCORRECT_VALUE=0
+         echo "Continuing..."
+      else
+         echo "Incorrect value, please try again."
+      fi
+   done
+
+   echo "Installing the OpenJDK's..."
+   brew install openjdk@11
+   brew install openjdk@17
+   brew install openjdk@21
+   brew install openjdk@25
+
+   echo "\nLinking default JDK version to the version specified...\n"
+
+   brew link openjdk@$version
 else
    echo "OpenJDK already installed, skipping,"
 fi
