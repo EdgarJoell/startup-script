@@ -41,6 +41,15 @@ else
    echo "TypeScript already installed, skipping,"
 fi
 
+echo "\nStep 5: Installing Python via Homebrew..." 
+
+if ! brew list | grep python &>/dev/null; then
+   echo "Installing the Python programming language via Homebrew..."
+   brew install python
+else
+   echo "Python already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
