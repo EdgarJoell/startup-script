@@ -121,6 +121,14 @@ else
   echo "PostgreSQL already installed, skipping,"
 fi
 
+echo "\nStep 11: Installing .NET..."
+
+if ! brew list dotnet &>/dev/null; then
+   brew install dotnet
+else
+   echo ".NET already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
