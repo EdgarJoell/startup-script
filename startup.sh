@@ -113,7 +113,13 @@ else
    echo "nvm already installed, skipping,"
 fi
 
+echo "\nStep 10: Installing PostgreSQL..."
 
+if ! brew list postgresql &>/dev/null; then
+  brew install postgresql
+else
+  echo "PostgreSQL already installed, skipping,"
+fi
 
 # echo "Finalizing Script..."
 
