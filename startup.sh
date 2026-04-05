@@ -155,6 +155,14 @@ else
   echo "JetBrains Rider already installed, skipping,"
 fi
 
+echo "\nStep 5: Installing Visual Studio Code...\n"
+
+if ! brew list --cask visual-studio-code &>/dev/null; then
+  brew install --cask visual-studio-code
+else
+  echo "Visual Studio Code already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
