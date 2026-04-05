@@ -147,6 +147,14 @@ else
   echo "JetBrains RubyMine already installed, skipping,"
 fi
 
+echo "\nStep 4: Installing JetBrains Rider...\n"
+
+if ! brew list --cask rider &>/dev/null; then
+  brew install --cask rider
+else
+  echo "JetBrains Rider already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
