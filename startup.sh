@@ -139,6 +139,14 @@ else
   echo "JetBrains WebStorm already installed, skipping,"
 fi
 
+echo "\nStep 2: Installing JetBrains RubyMine...\n"
+
+if ! brew list --cask rubymine &>/dev/null; then
+  brew install --cask rubymine
+else
+  echo "JetBrains RubyMine already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
