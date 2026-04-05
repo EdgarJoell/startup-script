@@ -129,6 +129,16 @@ else
    echo ".NET already installed, skipping,"
 fi
 
+echo "\nBeginning installations for Developers IDE's...\n"
+
+echo "\nStep 1: Installing JetBrains WebStorm...\n"
+
+if ! brew list --cask webstorm &>/dev/null; then
+  brew install --cask webstorm
+else
+  echo "JetBrains WebStorm already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
