@@ -187,6 +187,16 @@ else
   echo "pgAdmin4 already installed, skipping,"
 fi
 
+echo "\nBeginning to install NPM packages\n"
+
+echo "\nStep 1: Installing Angular CLI..."
+
+if ! npm list -g @angular/cli &>/dev/null; then
+  npm install -g @angular/cli
+else
+  echo "Angular CLI already installed, skipping."
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
