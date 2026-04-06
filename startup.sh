@@ -171,6 +171,14 @@ else
   echo "JetBrains ToolBox already installed, skipping,"
 fi
 
+echo "\nStep 7: Installing JetBrains DataGrip...\n"
+
+if ! brew list --cask datagrip &>/dev/null; then
+  brew install --cask datagrip
+else
+  echo "JetBrains DataGrip already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
