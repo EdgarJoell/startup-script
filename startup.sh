@@ -213,6 +213,14 @@ else
   echo "nodemon already installed, skipping."
 fi
 
+echo "\nStep 4: Installing create-next-app..."
+
+if ! npm list -g create-next-app &>/dev/null; then
+  npm install -g create-next-app
+else
+  echo "create-next-app already installed, skipping."
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
