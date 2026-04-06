@@ -163,6 +163,14 @@ else
   echo "Visual Studio Code already installed, skipping,"
 fi
 
+echo "\nStep 6: Installing JetBrains ToolBox...\n"
+
+if ! brew list --cask jetbrains-toolbox &>/dev/null; then
+  brew install --cask jetbrains-toolbox
+else
+  echo "JetBrains ToolBox already installed, skipping,"
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
