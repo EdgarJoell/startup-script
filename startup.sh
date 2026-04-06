@@ -197,6 +197,14 @@ else
   echo "Angular CLI already installed, skipping."
 fi
 
+echo "\nStep 2: Installing ts-node..."
+
+if ! npm list -g ts-node &>/dev/null; then
+  npm install -g ts-node
+else
+  echo "ts-node already installed, skipping."
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
