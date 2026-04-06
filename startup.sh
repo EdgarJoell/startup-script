@@ -205,6 +205,14 @@ else
   echo "ts-node already installed, skipping."
 fi
 
+echo "\nStep 3: Installing nodemon..."
+
+if ! npm list -g nodemon &>/dev/null; then
+  npm install -g nodemon
+else
+  echo "nodemon already installed, skipping."
+fi
+
 # echo "Finalizing Script..."
 
 # # Add some clean up right here
