@@ -245,9 +245,3 @@ else
   echo "electron already installed, skipping."
 fi
 
-
-# echo "Finalizing Script..."
-
-# # Add some clean up right here
-
-# echo "Completed. Happy Coding!"
