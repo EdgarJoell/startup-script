@@ -229,6 +229,14 @@ else
   echo "react-native-cli already installed, skipping."
 fi
 
+echo "\nStep 6: Installing expo-cli..."
+
+if ! npm list -g expo-cli &>/dev/null; then
+  npm install -g expo-cli
+else
+  echo "expo-cli already installed, skipping."
+fi
+
 # echo "Finalizing Script..."  --- Next commit is to "remove commented finalizing code"
 
 # # Add some clean up right here
