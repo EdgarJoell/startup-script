@@ -245,3 +245,10 @@ else
   echo "electron already installed, skipping."
 fi
 
+echo  "\nPerforming cleanup and finalizing the Startup Script\n"
+
+brew cleanup
+npm cache clean --force
+
+echo "\nFinalizing Script...\n"
+echo "Completed. Happy Coding!"
