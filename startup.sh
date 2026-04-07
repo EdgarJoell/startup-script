@@ -221,7 +221,15 @@ else
   echo "create-next-app already installed, skipping."
 fi
 
-# echo "Finalizing Script..."
+echo "\nStep 5: Installing react-native-cli..."  # Commit these three steps one by one --- obviously remove this comment
+
+if ! npm list -g react-native-cli &>/dev/null; then
+  npm install -g react-native-cli
+else
+  echo "react-native-cli already installed, skipping."
+fi
+
+# echo "Finalizing Script..."  --- Next commit is to "remove commented finalizing code"
 
 # # Add some clean up right here
 
