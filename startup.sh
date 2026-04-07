@@ -221,7 +221,7 @@ else
   echo "create-next-app already installed, skipping."
 fi
 
-echo "\nStep 5: Installing react-native-cli..."  # Commit these three steps one by one --- obviously remove this comment
+echo "\nStep 5: Installing react-native-cli..."
 
 if ! npm list -g react-native-cli &>/dev/null; then
   npm install -g react-native-cli
@@ -237,7 +237,16 @@ else
   echo "expo-cli already installed, skipping."
 fi
 
-# echo "Finalizing Script..."  --- Next commit is to "remove commented finalizing code"
+echo "\nStep 7: Installing electron..."
+
+if ! npm list -g electron &>/dev/null; then
+  npm install -g electron
+else
+  echo "electron already installed, skipping."
+fi
+
+
+# echo "Finalizing Script..."
 
 # # Add some clean up right here
 
