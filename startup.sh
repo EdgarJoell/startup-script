@@ -147,6 +147,14 @@ else
   echo "JetBrains RubyMine already installed, skipping,"
 fi
 
+echo -e "\nStep 3: Installing JetBrains IntelliJ Ultimate...\n"
+
+if ! brew list --cask intellij-idea &>/dev/null; then
+  brew install --cask intellij-idea
+else
+  echo "JetBrains IntelliJ Ultimate already installed, skipping,"
+fi
+
 echo -e "\nStep 4: Installing JetBrains Rider...\n"
 
 if ! brew list --cask rider &>/dev/null; then
