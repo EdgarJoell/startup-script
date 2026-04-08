@@ -3,15 +3,15 @@ printf "Beginning Process of setting up Mac machine for development...\n"
 printf "\nStep 1: Installing Homebrew to machine...\n"
 
 if ! command -v brew &>/dev/null; then
-   echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-   echo "Homebrew already installed, skipping."
-fi
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-if [[ "$(uname -m)" == "arm64" ]]; then
-   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-   eval "$(/opt/homebrew/bin/brew shellenv)"
+    if [[ "$(uname -m)" == "arm64" ]]; then
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+else
+  echo "Homebrew already installed, skipping."
 fi
 
 printf "\nContinuing on to install software and tools via Homebrew...\n"
