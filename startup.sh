@@ -89,10 +89,10 @@ fi
 printf "\nStep 7: Installing mongodb-community..."
 
 if ! brew list mongodb-community &>/dev/null; then
-   echo "Installing the mongodb-community database..."
-   brew install mongodb-community
+  brew tap mongodb/brew
+  brew install mongodb-community
 else
-   echo "mongodb-community already installed, skipping,"
+  echo "mongodb-community already installed, skipping,"
 fi
 
 printf "\nStep 8: Installing mongosh..."
