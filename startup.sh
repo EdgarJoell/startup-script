@@ -18,7 +18,7 @@ printf "\nContinuing on to install software and tools via Homebrew...\n"
 
 printf "\nStep 2: Installing Node.JS..."
 
-if ! brew list | grep node &>/dev/null; then
+if ! brew list node &>/dev/null; then
    echo "Installing the latest LTS Node.JS developer tool..."
     brew install npm
 else
@@ -27,7 +27,7 @@ fi
 
 printf "\nStep 3: Installing Ruby..."
 
-if ! brew list | grep ruby &>/dev/null; then
+if ! brew list ruby &>/dev/null; then
    echo "Installing the Ruby programming language..."
     brew install ruby
 else
@@ -36,7 +36,7 @@ fi
 
 printf "\nStep 4: Installing Ruby..."
 
-if ! brew list | grep typescript &>/dev/null; then
+if ! brew list typescript &>/dev/null; then
    echo "Installing the TypeScript programming language..."
     brew install typescript
 else
@@ -45,7 +45,7 @@ fi
 
 printf "\nStep 5: Installing Python..."
 
-if ! brew list | grep python &>/dev/null; then
+if ! brew list python &>/dev/null; then
    echo "Installing the Python programming language..."
    brew install python
 else
@@ -54,7 +54,7 @@ fi
 
 printf "\nStep 6: Installing OpenJDK..."
 
-if ! brew list | grep openjdk &>/dev/null; then
+if ! brew list openjdk &>/dev/null; then
    INCORRECT_VALUE=1
 
    while [ "$INCORRECT_VALUE" -eq 1 ]
@@ -88,7 +88,7 @@ fi
 
 printf "\nStep 7: Installing mongodb-community..."
 
-if ! brew list | grep mongodb-community &>/dev/null; then
+if ! brew list mongodb-community &>/dev/null; then
    echo "Installing the mongodb-community database..."
    brew install mongodb-community
 else
@@ -97,7 +97,7 @@ fi
 
 printf "\nStep 8: Installing mongosh..."
 
-if ! brew list | grep mongosh &>/dev/null; then
+if ! brew list mongosh &>/dev/null; then
    echo "Installing the mongosh developer tool..."
    brew install mongosh
 else
@@ -106,7 +106,7 @@ fi
 
 printf "\nStep 9: Installing Node Version Manager (NVM)..."
 
-if ! brew list | grep nvm &>/dev/null; then
+if ! brew list nvm &>/dev/null; then
    echo "Installing the nvm developer tool..."
    brew install nvm
 else
