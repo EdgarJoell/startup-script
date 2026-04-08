@@ -1,6 +1,6 @@
-echo -e "Beginning Process of setting up Mac machine for development...\n"
+printf "Beginning Process of setting up Mac machine for development...\n"
 
-echo -e "\nStep 1: Installing Homebrew to machine...\n"
+printf "\nStep 1: Installing Homebrew to machine...\n"
 
 if ! command -v brew &>/dev/null; then
    echo "Installing Homebrew..."
@@ -14,9 +14,9 @@ if [[ "$(uname -m)" == "arm64" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-echo -e "\nContinuing on to install software and tools via Homebrew...\n"
+printf "\nContinuing on to install software and tools via Homebrew...\n"
 
-echo -e "\nStep 2: Installing Node.JS..."
+printf "\nStep 2: Installing Node.JS..."
 
 if ! brew list | grep node &>/dev/null; then
    echo "Installing the latest LTS Node.JS developer tool..."
@@ -25,7 +25,7 @@ else
    echo "Node already installed, skipping,"
 fi
 
-echo -e "\nStep 3: Installing Ruby..."
+printf "\nStep 3: Installing Ruby..."
 
 if ! brew list | grep ruby &>/dev/null; then
    echo "Installing the Ruby programming language..."
@@ -34,7 +34,7 @@ else
    echo "Ruby already installed, skipping,"
 fi
 
-echo -e "\nStep 4: Installing Ruby..."
+printf "\nStep 4: Installing Ruby..."
 
 if ! brew list | grep typescript &>/dev/null; then
    echo "Installing the TypeScript programming language..."
@@ -43,7 +43,7 @@ else
    echo "TypeScript already installed, skipping,"
 fi
 
-echo -e "\nStep 5: Installing Python..."
+printf "\nStep 5: Installing Python..."
 
 if ! brew list | grep python &>/dev/null; then
    echo "Installing the Python programming language..."
@@ -52,7 +52,7 @@ else
    echo "Python already installed, skipping,"
 fi
 
-echo -e "\nStep 6: Installing OpenJDK..."
+printf "\nStep 6: Installing OpenJDK..."
 
 if ! brew list | grep openjdk &>/dev/null; then
    INCORRECT_VALUE=1
@@ -79,14 +79,14 @@ if ! brew list | grep openjdk &>/dev/null; then
    brew install openjdk@21
    brew install openjdk@25
 
-   echo -e "\nLinking default JDK version to the version specified...\n"
+   printf "\nLinking default JDK version to the version specified...\n"
 
    brew link openjdk@$version
 else
    echo "OpenJDK already installed, skipping,"
 fi
 
-echo -e "\nStep 7: Installing mongodb-community..."
+printf "\nStep 7: Installing mongodb-community..."
 
 if ! brew list | grep mongodb-community &>/dev/null; then
    echo "Installing the mongodb-community database..."
@@ -95,7 +95,7 @@ else
    echo "mongodb-community already installed, skipping,"
 fi
 
-echo -e "\nStep 8: Installing mongosh..."
+printf "\nStep 8: Installing mongosh..."
 
 if ! brew list | grep mongosh &>/dev/null; then
    echo "Installing the mongosh developer tool..."
@@ -104,7 +104,7 @@ else
    echo "mongosh already installed, skipping,"
 fi
 
-echo -e "\nStep 9: Installing Node Version Manager (NVM)..."
+printf "\nStep 9: Installing Node Version Manager (NVM)..."
 
 if ! brew list | grep nvm &>/dev/null; then
    echo "Installing the nvm developer tool..."
@@ -113,7 +113,7 @@ else
    echo "nvm already installed, skipping,"
 fi
 
-echo -e "\nStep 10: Installing PostgreSQL..."
+printf "\nStep 10: Installing PostgreSQL..."
 
 if ! brew list postgresql &>/dev/null; then
   brew install postgresql
@@ -121,7 +121,7 @@ else
   echo "PostgreSQL already installed, skipping,"
 fi
 
-echo -e "\nStep 11: Installing .NET..."
+printf "\nStep 11: Installing .NET..."
 
 if ! brew list dotnet &>/dev/null; then
    brew install dotnet
@@ -129,9 +129,9 @@ else
    echo ".NET already installed, skipping,"
 fi
 
-echo -e "\nBeginning installations for Developers IDE's...\n"
+printf "\nBeginning installations for Developers IDE's...\n"
 
-echo -e "\nStep 1: Installing JetBrains WebStorm...\n"
+printf "\nStep 1: Installing JetBrains WebStorm...\n"
 
 if ! brew list --cask webstorm &>/dev/null; then
   brew install --cask webstorm
@@ -139,7 +139,7 @@ else
   echo "JetBrains WebStorm already installed, skipping,"
 fi
 
-echo -e "\nStep 2: Installing JetBrains RubyMine...\n"
+printf "\nStep 2: Installing JetBrains RubyMine...\n"
 
 if ! brew list --cask rubymine &>/dev/null; then
   brew install --cask rubymine
@@ -147,7 +147,7 @@ else
   echo "JetBrains RubyMine already installed, skipping,"
 fi
 
-echo -e "\nStep 3: Installing JetBrains IntelliJ Ultimate...\n"
+printf "\nStep 3: Installing JetBrains IntelliJ Ultimate...\n"
 
 if ! brew list --cask intellij-idea &>/dev/null; then
   brew install --cask intellij-idea
@@ -155,7 +155,7 @@ else
   echo "JetBrains IntelliJ Ultimate already installed, skipping,"
 fi
 
-echo -e "\nStep 4: Installing JetBrains Rider...\n"
+printf "\nStep 4: Installing JetBrains Rider...\n"
 
 if ! brew list --cask rider &>/dev/null; then
   brew install --cask rider
@@ -163,7 +163,7 @@ else
   echo "JetBrains Rider already installed, skipping,"
 fi
 
-echo -e "\nStep 5: Installing Visual Studio Code...\n"
+printf "\nStep 5: Installing Visual Studio Code...\n"
 
 if ! brew list --cask visual-studio-code &>/dev/null; then
   brew install --cask visual-studio-code
@@ -171,7 +171,7 @@ else
   echo "Visual Studio Code already installed, skipping,"
 fi
 
-echo -e "\nStep 6: Installing JetBrains ToolBox...\n"
+printf "\nStep 6: Installing JetBrains ToolBox...\n"
 
 if ! brew list --cask jetbrains-toolbox &>/dev/null; then
   brew install --cask jetbrains-toolbox
@@ -179,7 +179,7 @@ else
   echo "JetBrains ToolBox already installed, skipping,"
 fi
 
-echo -e "\nStep 7: Installing JetBrains DataGrip...\n"
+printf "\nStep 7: Installing JetBrains DataGrip...\n"
 
 if ! brew list --cask datagrip &>/dev/null; then
   brew install --cask datagrip
@@ -187,7 +187,7 @@ else
   echo "JetBrains DataGrip already installed, skipping,"
 fi
 
-echo -e "\nStep 11: Installing pgAdmin4..."
+printf "\nStep 11: Installing pgAdmin4..."
 
 if ! brew list --cask pgadmin4 &>/dev/null; then
   brew install --cask pgadmin4
@@ -195,9 +195,9 @@ else
   echo "pgAdmin4 already installed, skipping,"
 fi
 
-echo -e "\nBeginning to install NPM packages\n"
+printf "\nBeginning to install NPM packages\n"
 
-echo -e "\nStep 1: Installing Angular CLI..."
+printf "\nStep 1: Installing Angular CLI..."
 
 if ! npm list -g @angular/cli &>/dev/null; then
   npm install -g @angular/cli
@@ -205,7 +205,7 @@ else
   echo "Angular CLI already installed, skipping."
 fi
 
-echo -e "\nStep 2: Installing ts-node..."
+printf "\nStep 2: Installing ts-node..."
 
 if ! npm list -g ts-node &>/dev/null; then
   npm install -g ts-node
@@ -213,7 +213,7 @@ else
   echo "ts-node already installed, skipping."
 fi
 
-echo -e "\nStep 3: Installing nodemon..."
+printf "\nStep 3: Installing nodemon..."
 
 if ! npm list -g nodemon &>/dev/null; then
   npm install -g nodemon
@@ -221,7 +221,7 @@ else
   echo "nodemon already installed, skipping."
 fi
 
-echo -e "\nStep 4: Installing create-next-app..."
+printf "\nStep 4: Installing create-next-app..."
 
 if ! npm list -g create-next-app &>/dev/null; then
   npm install -g create-next-app
@@ -229,7 +229,7 @@ else
   echo "create-next-app already installed, skipping."
 fi
 
-echo -e "\nStep 5: Installing react-native-cli..."
+printf "\nStep 5: Installing react-native-cli..."
 
 if ! npm list -g react-native-cli &>/dev/null; then
   npm install -g react-native-cli
@@ -237,7 +237,7 @@ else
   echo "react-native-cli already installed, skipping."
 fi
 
-echo -e "\nStep 6: Installing expo-cli..."
+printf "\nStep 6: Installing expo-cli..."
 
 if ! npm list -g expo-cli &>/dev/null; then
   npm install -g expo-cli
@@ -245,7 +245,7 @@ else
   echo "expo-cli already installed, skipping."
 fi
 
-echo -e "\nStep 7: Installing electron..."
+printf "\nStep 7: Installing electron..."
 
 if ! npm list -g electron &>/dev/null; then
   npm install -g electron
@@ -253,10 +253,10 @@ else
   echo "electron already installed, skipping."
 fi
 
-echo -e  "\nPerforming cleanup and finalizing the Startup Script\n"
+printf  "\nPerforming cleanup and finalizing the Startup Script\n"
 
 brew cleanup
 npm cache clean --force
 
-echo -e "\nFinalizing Script...\n"
+printf "\nFinalizing Script...\n"
 echo "Completed. Happy Coding!"
