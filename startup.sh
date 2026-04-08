@@ -59,7 +59,7 @@ if ! brew list openjdk &>/dev/null; then
 
    while [ "$INCORRECT_VALUE" -eq 1 ]
    do
-      read -t 10 -p "Which Java version would you like as your main version? Allowed versions: 11, 17, 21, 25 (if no version is specified, this script defaults to 21): " version
+      read -r -t 10 -p "Which Java version would you like as your main version? Allowed versions: 11, 17, 21, 25 (if no version is specified, this script defaults to 21): " version
 
       if [ "$version" = "" ]; then
          version=21
@@ -81,7 +81,7 @@ if ! brew list openjdk &>/dev/null; then
 
    printf "\nLinking default JDK version to the version specified...\n"
 
-   brew link openjdk@$version
+   brew link openjdk@"$version"
 else
    echo "OpenJDK already installed, skipping,"
 fi
