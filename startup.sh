@@ -58,7 +58,19 @@ done
 printf "\nStep 5: Installing Python...\n"
 brew install python
 
-printf "\nStep 6: Installing OpenJDK..."
+#  mongodb-community has to be separate because MongoDB has their own Homebrew repository and we need to 'tap' Homebrew to check external Homebrew sources in order to bring in mongodb-community
+echo -e "\nStep 6: Installing mongodb-community..."
+
+if ! brew list mongodb-community &>/dev/null; then
+  brew tap mongodb/brew
+  brew install mongodb-community
+else
+  echo "mongodb-community already installed, skipping,"
+fi
+
+#  Run openjdk separately because we're not just installing one JDK version but four so that the user has the choice of which Java version to use (11, 17, 21, 25)
+
+printf "\nStep 7: Installing OpenJDK..."
 
 if ! brew list openjdk &>/dev/null; then
   INCORRECT_VALUE=1
