@@ -30,7 +30,7 @@ for hbPackage in "${HOMEBREW_PACKAGES[@]}"; do
   fi
 done
 
-printf "\nStep 3: Installing Homebrew Casks (AKA: IDE's and other Development Application\n"
+printf "\nStep 3: Installing Homebrew Casks (AKA: IDE's and other Development Applications) \n"
 
 for hbCask in "${HOMEBREW_CASKS[@]}"; do
   printf "\nInstalling %s...\n" "$hbCask"
@@ -48,7 +48,7 @@ for npmPackage in "${NPM_PACKAGES[@]}"; do
   printf "\nInstalling %s...\n" "$npmPackage"
 
   if ! brew list "$npmPackage" &>/dev/null; then
-    brew install "$npmPackage"
+    brew install -g "$npmPackage"
   else
     printf "%s already installed, skipping, \n" "$npmPackage"
   fi
