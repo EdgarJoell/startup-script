@@ -54,6 +54,10 @@ for npmPackage in "${NPM_PACKAGES[@]}"; do
   fi
 done
 
+#  Python has to be separate because Apple Silicon comes with a System Python by default, we don't want that So we'll run Python without a system check.
+printf "\nStep 5: Installing Python...\n"
+brew install python
+
 printf "\nStep 6: Installing OpenJDK..."
 
 if ! brew list openjdk &>/dev/null; then
