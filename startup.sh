@@ -1,4 +1,5 @@
 HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "nvm" "postgresql" "dotnet")
+HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm")
 
 printf "Beginning Process of setting up Mac machine for development...\n"
 
