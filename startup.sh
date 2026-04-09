@@ -82,64 +82,6 @@ else
    echo "OpenJDK already installed, skipping,"
 fi
 
-printf "\nBeginning to install NPM packages\n"
-
-printf "\nStep 1: Installing Angular CLI..."
-
-if ! npm list -g @angular/cli &>/dev/null; then
-  npm install -g @angular/cli
-else
-  echo "Angular CLI already installed, skipping."
-fi
-
-printf "\nStep 2: Installing ts-node..."
-
-if ! npm list -g ts-node &>/dev/null; then
-  npm install -g ts-node
-else
-  echo "ts-node already installed, skipping."
-fi
-
-printf "\nStep 3: Installing nodemon..."
-
-if ! npm list -g nodemon &>/dev/null; then
-  npm install -g nodemon
-else
-  echo "nodemon already installed, skipping."
-fi
-
-printf "\nStep 4: Installing create-next-app..."
-
-if ! npm list -g create-next-app &>/dev/null; then
-  npm install -g create-next-app
-else
-  echo "create-next-app already installed, skipping."
-fi
-
-printf "\nStep 5: Installing react-native-cli..."
-
-if ! npm list -g react-native-cli &>/dev/null; then
-  npm install -g react-native-cli
-else
-  echo "react-native-cli already installed, skipping."
-fi
-
-printf "\nStep 6: Installing expo-cli..."
-
-if ! npm list -g expo-cli &>/dev/null; then
-  npm install -g expo-cli
-else
-  echo "expo-cli already installed, skipping."
-fi
-
-printf "\nStep 7: Installing electron..."
-
-if ! npm list -g electron &>/dev/null; then
-  npm install -g electron
-else
-  echo "electron already installed, skipping."
-fi
-
 printf  "\nPerforming cleanup and finalizing the Startup Script\n"
 
 brew cleanup
