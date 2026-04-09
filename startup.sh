@@ -22,6 +22,16 @@ for hbCask in "${HOMEBREW_CASKS[@]}"; do
   fi
 done
 
+for npmPackage in "${NPM_PACKAGES[@]}"; do
+  printf "\nInstalling %s...\n" "$npmPackage"
+
+  if ! brew list "$npmPackage" &>/dev/null; then
+    brew install "$npmPackage"
+  else
+    printf "%s already installed, skipping, \n" "$npmPackage"
+  fi
+done
+
 printf "Beginning Process of setting up Mac machine for development...\n"
 
 printf "\nStep 1: Installing Homebrew to machine...\n"
