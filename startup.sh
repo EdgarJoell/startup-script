@@ -2,6 +2,16 @@ HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "nvm" "postgresql"
 HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm")
 NPM_PACKAGES=("@angular/cli" "typescript" "ts-node" "nodemon" "create-next-app" "react-native-cli" "expo-cli" "electron")
 
+for hbPackage in "${HOMEBREW_PACKAGES[@]}"; do
+  printf "\nInstalling %s...\n" "$hbPackage"
+
+  if ! brew list "$hbPackage" &>/dev/null; then
+    brew install "$hbPackage"
+  else
+    printf "%s already installed, skipping, \n" "$hbPackage"
+  fi
+done
+
 printf "Beginning Process of setting up Mac machine for development...\n"
 
 printf "\nStep 1: Installing Homebrew to machine...\n"
