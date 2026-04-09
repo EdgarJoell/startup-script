@@ -1,3 +1,5 @@
+HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "nvm" "postgresql" "dotnet")
+
 printf "Beginning Process of setting up Mac machine for development...\n"
 
 printf "\nStep 1: Installing Homebrew to machine...\n"
