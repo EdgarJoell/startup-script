@@ -1,6 +1,6 @@
-HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "nvm" "postgresql" "dotnet")
-HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm")
-NPM_PACKAGES=("@angular/cli" "typescript" "ts-node" "nodemon" "create-next-app" "react-native-cli" "expo-cli" "electron")
+HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "postgresql" "dotnet")
+HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm" "android-studio")
+NPM_PACKAGES=("@angular/cli" "ts-node" "nodemon" "create-next-app" "react-native-cli" "expo-cli" "electron")
 
 printf "Beginning Process of setting up Mac machine for development...\n"
 
@@ -47,8 +47,8 @@ printf "\nStep 4: Installing NPM packages\n"
 for npmPackage in "${NPM_PACKAGES[@]}"; do
   printf "\nInstalling %s...\n" "$npmPackage"
 
-  if ! brew list "$npmPackage" &>/dev/null; then
-    brew install -g "$npmPackage"
+  if ! npm list -g "$npmPackage" --depth=0 | grep -q "$npmPackage"; then
+    npm install -g "$npmPackage"
   else
     printf "%s already installed, skipping, \n" "$npmPackage"
   fi
@@ -104,10 +104,31 @@ else
   echo "OpenJDK already installed, skipping,"
 fi
 
+# NVM needs its own step because it needs other commands to be run after installation
+printf "\nStep 8: Installing NVM...\n"
+
+if ! brew nvm &>/dev/null; then
+  brew install nvm
+  mkdir ~/.nvm
+
+cat >> ~/.zshrc << 'EOF'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+EOF
+
+  # shellcheck disable=SC1090
+  source ~/.zshrc
+else
+  echo "NVM already installed, skipping,"
+fi
+
 printf  "\nPerforming cleanup and finalizing the Startup Script\n"
 
+npm update
 brew cleanup
 npm cache clean --force
 
 printf "\nFinalizing Script...\n"
-echo "Completed. Happy Coding!"
+printf "Completed. It is recommended to close this terminal window and open a fresh one to load all installations and changes. \nHappy Coding!"
