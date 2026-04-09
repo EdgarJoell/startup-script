@@ -12,6 +12,16 @@ for hbPackage in "${HOMEBREW_PACKAGES[@]}"; do
   fi
 done
 
+for hbCask in "${HOMEBREW_CASKS[@]}"; do
+  printf "\nInstalling %s...\n" "$hbCask"
+
+  if ! brew list "$hbCask" &>/dev/null; then
+    brew install "$hbCask"
+  else
+    printf "%s already installed, skipping, \n" "$hbCask"
+  fi
+done
+
 printf "Beginning Process of setting up Mac machine for development...\n"
 
 printf "\nStep 1: Installing Homebrew to machine...\n"
