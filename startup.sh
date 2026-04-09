@@ -48,44 +48,6 @@ else
   echo "Homebrew already installed, skipping."
 fi
 
-printf "\nContinuing on to install software and tools via Homebrew...\n"
-
-printf "\nStep 2: Installing Node.JS..."
-
-if ! brew list node &>/dev/null; then
-   echo "Installing the latest LTS Node.JS developer tool..."
-    brew install npm
-else
-   echo "Node already installed, skipping,"
-fi
-
-printf "\nStep 3: Installing Ruby..."
-
-if ! brew list ruby &>/dev/null; then
-   echo "Installing the Ruby programming language..."
-    brew install ruby
-else
-   echo "Ruby already installed, skipping,"
-fi
-
-printf "\nStep 4: Installing Ruby..."
-
-if ! brew list typescript &>/dev/null; then
-   echo "Installing the TypeScript programming language..."
-    brew install typescript
-else
-   echo "TypeScript already installed, skipping,"
-fi
-
-printf "\nStep 5: Installing Python..."
-
-if ! brew list python &>/dev/null; then
-   echo "Installing the Python programming language..."
-   brew install python
-else
-   echo "Python already installed, skipping,"
-fi
-
 printf "\nStep 6: Installing OpenJDK..."
 
 if ! brew list openjdk &>/dev/null; then
@@ -118,49 +80,6 @@ if ! brew list openjdk &>/dev/null; then
    brew link openjdk@"$version"
 else
    echo "OpenJDK already installed, skipping,"
-fi
-
-printf "\nStep 7: Installing mongodb-community..."
-
-if ! brew list mongodb-community &>/dev/null; then
-  brew tap mongodb/brew
-  brew install mongodb-community
-else
-  echo "mongodb-community already installed, skipping,"
-fi
-
-printf "\nStep 8: Installing mongosh..."
-
-if ! brew list mongosh &>/dev/null; then
-   echo "Installing the mongosh developer tool..."
-   brew install mongosh
-else
-   echo "mongosh already installed, skipping,"
-fi
-
-printf "\nStep 9: Installing Node Version Manager (NVM)..."
-
-if ! brew list nvm &>/dev/null; then
-   echo "Installing the nvm developer tool..."
-   brew install nvm
-else
-   echo "nvm already installed, skipping,"
-fi
-
-printf "\nStep 10: Installing PostgreSQL..."
-
-if ! brew list postgresql &>/dev/null; then
-  brew install postgresql
-else
-  echo "PostgreSQL already installed, skipping,"
-fi
-
-printf "\nStep 11: Installing .NET..."
-
-if ! brew list dotnet &>/dev/null; then
-   brew install dotnet
-else
-   echo ".NET already installed, skipping,"
 fi
 
 printf "\nBeginning installations for Developers IDE's...\n"
