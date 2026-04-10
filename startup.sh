@@ -1,5 +1,5 @@
 HOMEBREW_PACKAGES=("git" "node" "ruby" "typescript" "mongosh" "postgresql" "dotnet")
-HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm" "android-studio" "postman" "insomnia")
+HOMEBREW_CASKS=("webstorm" "rubymine" "intellij-idea" "rider" "visual-studio-code" "jetbrains-toolbox" "datagrip" "pgadmin4" "dbeaver-community" "clion" "pycharm" "android-studio" "postman" "insomnia" "docker-desktop")
 NPM_PACKAGES=("@angular/cli" "ts-node" "nodemon" "create-next-app" "react-native-cli" "expo-cli" "electron")
 
 printf "Beginning Process of setting up Mac machine for development...\n"
