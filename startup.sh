@@ -109,8 +109,11 @@ printf "\nStep 8: Installing NVM...\n"
 
 if ! brew nvm &>/dev/null; then
   brew install nvm
+
+  printf "\nCreating .nvm directory.\n"
   mkdir ~/.nvm
 
+  printf "\nAdding Homebrew NVM files to .zshrc\n"
 cat >> ~/.zshrc << 'EOF'
 
 export NVM_DIR="$HOME/.nvm"
@@ -118,6 +121,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 EOF
 
+  printf "\nReloading .zshrc filen\n"
   # shellcheck disable=SC1090
   source ~/.zshrc
 else
